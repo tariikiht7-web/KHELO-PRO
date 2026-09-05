@@ -20,7 +20,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* DARK THEME VARIABLES — Bold, modern, high contrast */
         :root {
             --bg-gradient-start: #0b0d10;
             --bg-gradient-end: #14181c;
@@ -41,8 +40,6 @@
             --whatsapp-color: #25D366;
             --facebook-color: #1877f2;
             --telegram-color: #0088cc;
-            --border-light: #2d3744;
-            --soft-gray: #1e252e;
         }
 
         body {
@@ -55,7 +52,6 @@
             padding: 24px 20px 40px;
         }
 
-        /* Subtle background pattern (dark version) */
         body::before {
             content: "";
             position: fixed;
@@ -75,7 +71,6 @@
             z-index: 2;
         }
 
-        /* Header & logo */
         .header {
             text-align: center;
             margin-top: 20px;
@@ -109,6 +104,485 @@
             font-size: 14px;
             font-weight: 500;
             letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+        }
+        .tagline span { opacity: 0.7; }
+
+        .download-btn {
+            background: linear-gradient(95deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-size: 17px;
+            font-weight: 700;
+            width: 100%;
+            max-width: 340px;
+            margin: 28px auto 16px;
+            cursor: pointer;
+            box-shadow: 0 12px 24px -10px rgba(37, 99, 235, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.25s;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn:active { transform: scale(0.97); box-shadow: 0 6px 14px -8px #1e40af; }
+        .download-btn i { font-size: 18px; }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 20px 12px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(0px);
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.5); }
+
+        .icon-bg {
+            width: 56px;
+            height: 56px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 14px;
+            transition: all 0.2s;
+        }
+        .card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .card p {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .card-1 .icon-bg { background: #1e2a3a; color: var(--card-1-color); }
+        .card-2 .icon-bg { background: #1a2e2a; color: var(--card-2-color); }
+        .card-3 .icon-bg { background: #25203a; color: var(--card-3-color); }
+        .card-4 .icon-bg { background: #2e241a; color: var(--card-4-color); }
+
+        .features-section { 
+            width: 100%; 
+            max-width: 450px; 
+            padding: 0 0 40px; 
+        }
+
+        .features-header { 
+            text-align: center; 
+            margin-top: 20px;
+            margin-bottom: 32px; 
+        }
+        .features-header h2 { 
+            font-size: 26px; 
+            font-weight: 800; 
+            margin-bottom: 12px; 
+            color: var(--text-primary);
+        }
+        .features-header p { 
+            color: var(--text-secondary); 
+            font-size: 15px; 
+            font-weight: 500; 
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .feature-card:hover { transform: translateY(-3px); box-shadow: 0 20px 30px -14px rgba(0, 0, 0, 0.4); }
+
+        .feature-card .icon-large {
+            width: 64px; 
+            height: 64px; 
+            border-radius: 24px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 28px; 
+            margin-bottom: 20px; 
+        }
+
+        .feature-card h3 { 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin-bottom: 8px; 
+            color: var(--text-primary);
+        }
+        .feature-card p { 
+            color: var(--text-muted); 
+            font-size: 14px; 
+            line-height: 1.45;
+            font-weight: 500;
+        }
+
+        .card-deposit .icon-large { background: #2a1a1a; color: var(--red-accent); }
+        .card-withdraw .icon-large { background: #1a2a1a; color: var(--card-2-color); }
+        .card-secure .icon-large { background: #1a223a; color: var(--card-1-color); }
+        .card-rewards .icon-large { background: #2a261a; color: var(--yellow-accent); }
+
+        .final-cta-text { 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin: 28px 0 16px; 
+            text-align: center; 
+            color: var(--text-primary);
+        }
+        .final-cta-btn {
+            background: linear-gradient(95deg, #2563eb, #1d4ed8);
+            padding: 16px 0;
+            border-radius: 48px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 15px 30px -12px #1e40af70;
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.2s;
+            border: none;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta-btn:active { transform: scale(0.97); }
+
+        .community-section {
+            width: 100%;
+            max-width: 460px;
+            padding: 40px 16px 30px;
+            text-align: center;
+            background: rgba(20, 24, 28, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 56px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-logo-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .footer-logo-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 20px;
+            background: #1e2329;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .footer-logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .app-name {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(120deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .copyright-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .copyright-text a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .download-helper {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 5px;
+            text-align: center;
+            max-width: 340px;
+        }
+        .download-helper a {
+            color: var(--glow-blue);
+            text-decoration: none;
+        }
+        .download-helper a:hover {
+            text-decoration: underline;
+        }
+
+        .stat-card, .feature-card, .footer-logo-info, .copyright-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .stat-card.visible, .feature-card.visible, .footer-logo-info.visible, .copyright-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 16px 16px 32px; }
+            .main-title { font-size: 24px; }
+            .stats-grid { gap: 14px; }
+            .card h3 { font-size: 20px; }
+            .feature-card { padding: 22px 18px; }
+            .community-section { padding: 30px 12px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-box">
+            <img src="logo.png" alt="KHELO PRO Logo">
+        </div>
+        <p class="subtitle-sm">Bangladesh's #1 Trusted Platform</p>
+        <h1 class="main-title">KHELO PRO</h1>
+        <div class="tagline">
+            <span>🎮 Play</span> • <span>🏆 Win</span> • <span>⚡ Enjoy</span>
+        </div>
+        
+        <!-- ====== DOWNLOAD BUTTON WITH YOUR LINK ====== -->
+        <a href="https://github.com/tariikht7-web/KHELO-PRO/releases/download/v1.0/Khelo.Pro.1.apk" 
+           class="download-btn" 
+           target="_blank"
+           download="Khelo.Pro.1.apk">
+            <i class="fa-solid fa-download"></i> Download App (APK)
+        </a>
+        
+        <div class="download-helper">
+            ⚠️ ডাউনলোড না হলে 
+            <a href="https://github.com/tariikht7-web/KHELO-PRO/releases" target="_blank">
+                GitHub Release পেজে যান
+            </a>
+        </div>
+    </header>
+
+    <div class="stats-grid">
+        <div class="card card-1 stat-card">
+            <div class="icon-bg">
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <h3>30K+</h3>
+            <p>Successful Downloads</p>
+        </div>
+        <div class="card card-2 stat-card">
+            <div class="icon-bg">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>10K+</h3>
+            <p>Active Players</p>
+        </div>
+        <div class="card card-3 stat-card">
+            <div class="icon-bg">
+                <i class="fa-regular fa-clock"></i>
+            </div>
+            <h3>24/7</h3>
+            <p>Support Team</p>
+        </div>
+        <div class="card card-4 stat-card">
+            <div class="icon-bg">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h3>6+</h3>
+            <p>Exclusive Games</p>
+        </div>
+    </div>
+
+    <section class="features-section">
+        <div class="features-header">
+            <h2>✨ Why Choose Us?</h2>
+            <p>Trusted, Fast & Secure Gaming Ecosystem</p>
+        </div>
+        
+        <div class="feature-card card-deposit">
+            <div class="icon-large">
+                <i class="fa-regular fa-credit-card"></i>
+            </div>
+            <h3>Instant Deposit</h3>
+            <p>Deposit money anytime and start playing immediately. Easy payment gateway.</p>
+        </div>
+        
+        <div class="feature-card card-withdraw">
+            <div class="icon-large">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <h3>Instant Withdrawal</h3>
+            <p>Withdraw your winnings anytime. No delays, no hassle.</p>
+        </div>
+        
+        <div class="feature-card card-secure">
+            <div class="icon-large">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>100% Secure & Encrypted</h3>
+            <p>Your data and transactions are fully protected. Recognized as a trusted platform.</p>
+        </div>
+        
+        <div class="feature-card card-rewards">
+            <div class="icon-large">
+                <i class="fa-solid fa-medal"></i>
+            </div>
+            <h3>Best Rewards & Bonuses</h3>
+            <p>Unlimited bonuses, cashback, and loyalty rewards in every game.</p>
+        </div>
+
+        <p class="final-cta-text">Download the app now and start playing!</p>
+        
+        <a href="https://github.com/tariikht7-web/KHELO-PRO/releases/download/v1.0/Khelo.Pro.1.apk" 
+           class="final-cta-btn" 
+           target="_blank"
+           download="Khelo.Pro.1.apk">
+            <i class="fa-solid fa-download"></i> Download KHELO PRO
+        </a>
+        
+        <div class="download-helper" style="margin-top: 12px;">
+            <a href="https://github.com/tariikht7-web/KHELO-PRO/releases" target="_blank">
+                🔄 ডাউনলোড না হলে এখানে ক্লিক করুন
+            </a>
+        </div>
+    </section>
+
+    <section class="community-section">
+        <div class="footer-logo-info">
+            <div class="footer-logo-box">
+                <img src="logo.png" alt="KHELO PRO LOGO">
+            </div>
+            <span class="app-name">KHELO PRO</span>
+        </div>
+        <p class="copyright-text">
+            © 2026 KHELO PRO | Developed <br>
+            By <a href="https://rhesports.fun/developer.html">DEVELOPER ORBIT</a>
+        </p>
+    </section>
+
+    <script>
+        (function() {
+            // Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.stat-card, .feature-card, .footer-logo-info, .copyright-text').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Ripple effect
+            document.querySelectorAll('.download-btn, .final-cta-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            console.log('✅ KHELO PRO - Download Link Updated!');
+        })();
+    </script>
+</body>
+</html>            letter-spacing: 0.5px;
             margin-bottom: 6px;
         }
 
