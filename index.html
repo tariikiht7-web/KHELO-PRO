@@ -112,7 +112,7 @@
             </h1>
             <p class="mb-8 leading-relaxed text-gray-700 text-lg">প্রতিদিন ফ্রি ফায়ার অথবা লুডু খেলে নগদ অর্থ পুরষ্কার জিতুন Khelo Pro অ্যাপের মাধ্যমে!</p>
             <div class="flex justify-center">
-                <a href="https://github.com/tariikiht7-web/KHELO-PRO/releases/download/1.0/Khelo.Pro.1.apk" target="_blank">
+                <a href="https://github.com/tariikiht7-web/KHELO-PRO/releases/download/1.0/Khelo.Pro.1.apk" download>
                     <button class="inline-flex text-white bg-indigo-600 border-0 py-3 px-8 focus:outline-none hover:bg-indigo-700 rounded-lg text-lg font-semibold shadow-lg transition duration-300 transform hover:-translate-y-1">Download App</button>
                 </a>
             </div>
@@ -205,7 +205,7 @@
             <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
                 <circle cx="12" cy="7" r="4"></circle>
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0-4 4v2"></path>
               </svg>
             </div>
           </div>
@@ -244,6 +244,18 @@
       showSlide(slideIndex);
   }
 
+  function currentSlide(index) {
+      slideIndex = index;
+      showSlide(index);
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 2500);
+  }
+
+  let interval = setInterval(nextSlide, 2500);
+  </script>
+
+</body>
+</html>              
   function currentSlide(index) {
       slideIndex = index;
       showSlide(slideIndex);
